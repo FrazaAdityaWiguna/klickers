@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
+import SerwistRegister from "@/components/sw/SerwistRegister";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -62,8 +63,13 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="apple-touch-icon" href="/icons/icon_klickers-192x192.png" />
+      </head>
+
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Providers>{children}</Providers>
+        <SerwistRegister />
       </body>
     </html>
   );
