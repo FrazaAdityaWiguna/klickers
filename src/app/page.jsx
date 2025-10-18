@@ -1,3 +1,5 @@
+"use client";
+
 import ThemeToggle from "@/components/theme/ThemeToggle";
 
 export default function Home() {
