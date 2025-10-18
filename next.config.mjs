@@ -7,7 +7,7 @@ const revision = execSync("git rev-parse HEAD", { encoding: "utf8" })
   .slice(0, 7);
 
 const withSerwist = withSerwistInit({
-  swSrc: "app/sw.js",
+  swSrc: "src/app/sw.js",
   swDest: "public/sw.js",
   cacheOnNavigation: true,
   reloadOnOnline: true,
@@ -19,6 +19,10 @@ const withSerwist = withSerwistInit({
   ],
 });
 
+const nextConfig = {
+  // Next Config
+};
+
 export default withSerwist({
-  // Next Configuration
+  ...nextConfig,
 });

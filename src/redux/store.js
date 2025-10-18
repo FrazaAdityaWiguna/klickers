@@ -1,6 +1,5 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { persistReducer, persistStore } from "redux-persist";
-import { persistConfig } from "./persistConfig";
+import { persistStore } from "redux-persist";
 
 // Reducer
 import themeReducer from "./slice/themeSlice.js";
