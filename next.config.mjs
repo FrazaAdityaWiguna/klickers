@@ -14,7 +14,7 @@ const withSerwist = withSerwistInit({
   disable: process.env.NODE_ENV !== "production",
   additionalPrecacheEntries: [
     { url: "/", revision },
-    { url: "/~offline", revision },
+    { url: "/offline", revision },
   ],
 });
 
