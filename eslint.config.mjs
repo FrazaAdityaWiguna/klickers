@@ -2,6 +2,8 @@
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { FlatCompat } from "@eslint/eslintrc";
+import reactHooks from "eslint-plugin-react-hooks";
+import reactRefresh from "eslint-plugin-react-refresh";
 
 // impor plugin sebagai module (ESM)
 import unusedImportsPlugin from "eslint-plugin-unused-imports";
@@ -25,8 +27,16 @@ const eslintConfig = [
     ],
     plugins: {
       "unused-imports": unusedImportsPlugin,
+      "react-hooks": reactHooks,
+      "react-refresh": reactRefresh,
     },
+    files: ["**/*.{js,jsx}"],
     rules: {
+      ...reactHooks.configs.recommended.rules,
+      "react-refresh/only-export-components": [
+        "warn",
+        { allowConstantExport: true },
+      ],
       "no-console": ["warn", { allow: ["warn", "error"] }],
       "no-unused-vars": [
         "warn",
